@@ -1,13 +1,21 @@
 package com.tienda.controlador;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tienda.excepciones.ResourceNotFoundException;
 import com.tienda.modelo.Deseo;
 import com.tienda.repositorio.DeseoRepositorio;
 
@@ -24,4 +32,16 @@ public class DeseoControlador {
 	public List<Deseo> listarTodosLosDeseos() {
 		return repositorio.findAll();
 	}
+	
+	//este metodo sirve para eliminar un deseo
+	@DeleteMapping("/deseos/{id}")
+	public ResponseEntity<Map<String,Boolean>> eliminarDeseo(@PathVariable Long id){
+		Deseo deseo = repositorio.findById(id)
+				            .orElseThrow(() -> new ResourceNotFoundException("No existe el deseo con el ID : " + id));
+		
+		repositorio.delete(deseo);
+		Map<String, Boolean> respuesta = new HashMap<>();
+		respuesta.put("eliminar",Boolean.TRUE);
+		return ResponseEntity.ok(respuesta);
+    }
 }
