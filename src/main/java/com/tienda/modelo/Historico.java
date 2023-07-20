@@ -20,10 +20,17 @@ public class Historico {
 	@Column(name = "fecha", nullable = false)
 	private String fecha;
 	
+	@Column(name = "accion", nullable = false)
+	private String accion;
+	
 	@ManyToOne
-	@JoinColumn (name = "producto_id" , nullable = false, unique = true)
+	@JoinColumn (name = "producto_id" , nullable = false)
 	private Producto producto;
 
+	public Historico() {
+		super();
+	}
+	
 	public Historico(Long id, String fecha, Producto producto) {
 		super();
 		this.id = id;
@@ -45,6 +52,14 @@ public class Historico {
 
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
+	}
+
+	public String getAccion() {
+		return accion;
+	}
+
+	public void setAccion(String accion) {
+		this.accion = accion;
 	}
 
 	public Producto getProducto() {
