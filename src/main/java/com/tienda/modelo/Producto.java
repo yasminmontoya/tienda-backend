@@ -31,12 +31,13 @@ public class Producto {
 
 	}
 
-	public Producto(Long id, String nombre, float precio, int cantidad) {
+	public Producto(Long id, String nombre, float precio, int cantidad, String imagenUrl) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.cantidad = cantidad;
+		this.imagenUrl = imagenUrl;
 	}
 
 	public Long getId() {
