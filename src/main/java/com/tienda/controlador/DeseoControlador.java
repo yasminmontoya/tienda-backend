@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tienda.excepciones.ResourceNotFoundException;
 import com.tienda.modelo.Deseo;
+import com.tienda.modelo.Producto;
 import com.tienda.repositorio.DeseoRepositorio;
 
 @RestController
@@ -31,6 +32,20 @@ public class DeseoControlador {
 	@GetMapping("/deseos")
 	public List<Deseo> listarTodosLosDeseos() {
 		return repositorio.findAll();
+	}
+	
+	//este metodo sirve para buscar un producto
+	@GetMapping("/deseos/{id}")
+	public ResponseEntity<Deseo> obtenerDeseoPorId(@PathVariable Long id){
+		Deseo deseo = repositorio.findById(id)
+				            .orElseThrow(() -> new ResourceNotFoundException("No existe el deseo con el ID : " + id));
+		return ResponseEntity.ok(deseo);
+	}
+	
+	//este metodo sirve para guardar un deseo
+	@PostMapping("/deseos")
+	public Deseo guardarDeseo(@RequestBody Deseo deseo) {
+		return repositorio.save(deseo);
 	}
 	
 	//este metodo sirve para eliminar un deseo

@@ -18,11 +18,14 @@ public class Producto {
 	@Column(name = "nombre", length = 128, nullable = false, unique = true)
 	private String nombre;
 
-	@Column(name = "precio")
+	@Column(name = "precio", nullable = false)
 	private float precio;
 
-	@Column(name = "cantidad")
+	@Column(name = "cantidad", nullable = false)
 	private int cantidad;
+	
+	@Column(name = "imagen_url", nullable = false)
+	private String imagenUrl;
 
 	public Producto() {
 
@@ -66,6 +69,14 @@ public class Producto {
 
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
+	}
+
+	public String getImagenUrl() {
+		return imagenUrl;
+	}
+
+	public void setImagenUrl(String imagenUrl) {
+		this.imagenUrl = imagenUrl;
 	}
 
 }

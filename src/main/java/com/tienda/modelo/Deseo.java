@@ -17,11 +17,11 @@ public class Deseo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "fecha")
+	@Column(name = "fecha", nullable = false)
 	private String fecha;
 	
 	@ManyToOne
-	@JoinColumn (name = "producto_id")
+	@JoinColumn (name = "producto_id" , nullable = false, unique = true)
 	private Producto producto;
 	
 	public Deseo() {
