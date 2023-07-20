@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tienda.excepciones.ResourceNotFoundException;
 import com.tienda.modelo.Deseo;
-import com.tienda.modelo.Producto;
 import com.tienda.repositorio.DeseoRepositorio;
 
 @RestController
