@@ -40,6 +40,14 @@ public class Producto {
 		this.imagenUrl = imagenUrl;
 	}
 
+	public Producto(String nombre, float precio, int cantidad, String imagenUrl) {
+		super();
+		this.nombre = nombre;
+		this.precio = precio;
+		this.cantidad = cantidad;
+		this.imagenUrl = imagenUrl;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -78,6 +86,12 @@ public class Producto {
 
 	public void setImagenUrl(String imagenUrl) {
 		this.imagenUrl = imagenUrl;
+	}
+
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", cantidad=" + cantidad
+				+ ", imagenUrl=" + imagenUrl + "]";
 	}
 
 }
