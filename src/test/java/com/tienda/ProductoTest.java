@@ -33,6 +33,9 @@ public class ProductoTest {
 		Producto producto = new Producto("Lapiceros", 3.45f, 40, "https://www.hanjigifts.com/cdn/shop/products/ScreenShot2020-10-14at1.39.03PM_300x300.png");
 		Producto productoGuardado = repositorio.save(producto);
 		
+		//Producto producto = new Producto("Cuadernos", 4.59f, 30, "https://www.hanjigifts.com/cdn/shop/products/ScreenShot2022-08-13at3.21.52PM_1024x1024@2x.png");
+		//Producto productoGuardado = repositorio.save(producto);
+		
 		assertNotNull(productoGuardado);		
 	}
 	

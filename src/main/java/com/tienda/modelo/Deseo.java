@@ -30,6 +30,11 @@ public class Deseo {
 		this.producto = producto;
 	}
 
+	public Deseo(Producto producto) {
+		super();
+		this.producto = producto;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -44,6 +49,11 @@ public class Deseo {
 
 	public void setProducto(Producto producto) {
 		this.producto = producto;
+	}
+
+	@Override
+	public String toString() {
+		return "Deseo [id=" + id + ", producto=" + producto + "]";
 	}
 	
 }
