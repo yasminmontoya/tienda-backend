@@ -25,8 +25,6 @@ Debemos insertar los siguientes productos en la tabla correspondiente:
 
 ## Rutas
 
-La url utilizada fue `http://localhost:8080`
-
 Para la API se usaron las siguientes rutas:
 
 `http://localhost:8080/api/v1/productos`
