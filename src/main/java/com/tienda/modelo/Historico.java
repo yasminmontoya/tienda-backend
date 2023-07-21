@@ -17,10 +17,10 @@ public class Historico {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "fecha", nullable = false)
+	@Column(name = "fecha", length = 25, nullable = false)
 	private String fecha;
 	
-	@Column(name = "accion", nullable = false)
+	@Column(name = "accion", length = 10, nullable = false)
 	private String accion;
 	
 	@ManyToOne
