@@ -38,6 +38,13 @@ public class Historico {
 		this.producto = producto;
 	}
 
+	public Historico(String fecha, String accion, Producto producto) {
+		super();
+		this.fecha = fecha;
+		this.accion = accion;
+		this.producto = producto;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -68,6 +75,11 @@ public class Historico {
 
 	public void setProducto(Producto producto) {
 		this.producto = producto;
+	}
+
+	@Override
+	public String toString() {
+		return "Historico [id=" + id + ", fecha=" + fecha + ", accion=" + accion + ", producto=" + producto + "]";
 	}
 
 }
